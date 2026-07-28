@@ -1,0 +1,129 @@
+.placementPerformance-card {
+  width: 632px;
+  height: 418px;
+  background-color: #FFFFFFB2;
+  border-radius: 12px;
+  border: 1px solid #CCC3D466;
+  backdrop-filter: blur(12px);
+  padding: 24px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  grid-column: 1 / span 2;
+  grid-row: 1 / span 1;
+}
+
+.placementPerformance-header {
+  width: 582px;
+  height: 48px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding-right: 0.01px;
+  box-sizing: border-box;
+}
+
+.placementPerformance-leftContent {
+  width: 232.97px;
+  height: 48px;
+  display: flex;
+  flex-direction: column;
+}
+
+.placementPerformance-title {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 28px;
+  color: #0B1C30;
+  margin: 0;
+}
+
+.placementPerformance-subtitle {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #4A4452;
+  margin: 0;
+}
+
+.placementPerformance-legend {
+  width: 89.84px;
+  height: 17px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding-bottom: 1px;
+  box-sizing: border-box;
+}
+
+.placementPerformance-legendDot {
+  width: 12px;
+  height: 12px;
+  border-radius: 9999px;
+  background-color: #8D61D7;
+}
+
+.placementPerformance-legendText {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.6px;
+  color: #0B1C30;
+}
+
+.placementPerformance-chartWrap {
+  width: 582px;
+  height: 272px;
+  padding-top: 16px;
+  padding-left: 24px;
+  padding-right: 24px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.placementPerformance-columns {
+  width: 534px;
+  height: 272px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.placementPerformance-columnItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.placementPerformance-bar {
+  width: 65.44px;
+  background-color: #8D61D733;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  transition: background-color 0.2s ease;
+  cursor: pointer;
+}
+
+.placementPerformance-bar.highlight {
+  background-color: #8D61D7;
+}
+
+.placementPerformance-bar:hover {
+  background-color: #8D61D7;
+}
+
+.placementPerformance-label {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  color: #4A4452;
+  text-align: center;
+}

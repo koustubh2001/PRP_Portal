@@ -1,0 +1,35 @@
+.admin-dashboard-container {
+  display: flex;
+  width: 1440px;
+  min-height: 1024px;
+  background-color: #f8fafc;
+  margin: 0 auto;
+  position: relative;
+}
+
+.admin-main-content {
+  position: absolute;
+  width: 1072px;
+  height: 960px;
+  left: 368px;
+  top: 0px;
+  display: flex;
+  flex-direction: column;
+  background-color: #f8fafc;
+  box-sizing: border-box;
+}
+
+.admin-dashboard-body {
+  padding: 24px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.admin-middle-row {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+}

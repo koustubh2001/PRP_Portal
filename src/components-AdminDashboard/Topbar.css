@@ -1,0 +1,143 @@
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 1088px;
+  height: 64px;
+  padding: 0 64px;
+  background-color: #F1FBFF;
+  border-bottom: 1px solid #CCC3D4;
+  box-sizing: border-box;
+}
+
+.topbar-searchWrap {
+  display: flex;
+  align-items: center;
+  width: 320px;
+  height: 36px;
+  background-color: #EAF5FA;
+  border-radius: 9999px;
+  padding: 9px 16px 10px 40px;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.topbar-searchIcon {
+  position: absolute;
+  left: 14px;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.topbar-searchIcon img {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
+
+.topbar-searchInput {
+  border: none;
+  outline: none;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #6B7280;
+  width: 100%;
+  background: transparent;
+  line-height: 100%;
+}
+
+.topbar-searchInput::placeholder {
+  color: #6B7280;
+}
+
+.topbar-right {
+  display: flex;
+  align-items: center;
+  width: 320.49px;
+  height: 40px;
+  gap: 24px;
+}
+
+.topbar-iconsGroup {
+  display: flex;
+  align-items: center;
+  width: 136.1px;
+  height: 36px;
+  gap: 16px;
+}
+
+.topbar-iconBtn {
+  width: 36px;
+  height: 36px;
+  border-radius: 9999px;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.topbar-iconBtn img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.topbar-divider {
+  width: 1px;
+  height: 32px;
+  background-color: #CCC3D4;
+}
+
+.topbar-userInfo {
+  display: flex;
+  align-items: center;
+  width: 135.39px;
+  height: 40px;
+  gap: 12px;
+}
+
+.topbar-userText {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  width: 83.39px;
+  height: 36px;
+}
+
+.topbar-userName {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: #131D21;
+  line-height: 20px;
+  letter-spacing: 0.14px;
+  text-align: right;
+}
+
+.topbar-userRole {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: #131D21;
+  line-height: 16px;
+  letter-spacing: 0px;
+  text-align: right;
+  text-transform: uppercase;
+}
+
+.topbar-userAvatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 9999px;
+  object-fit: cover;
+  box-shadow: 0px 0px 0px 2px #885CD2;
+}
