@@ -33,8 +33,7 @@ import actionIcon from "../assets/icons/action-dots.png";
 
 import "./AdminDashboard.css";
 
-// 1. SIDEBAR COMPONENT
-const Sidebar = () => {
+const AdminDashboard = () => {
   const [activeItem, setActiveItem] = useState("Dashboard");
 
   const navItems = [
@@ -45,78 +44,6 @@ const Sidebar = () => {
     { label: "Analytics", icon: navAnalytics },
   ];
 
-  return (
-    <div className="sidebar">
-      <div className="sidebar-nav">
-        <ul className="sidebar-navList">
-          {navItems.map((item) => (
-            <li
-              key={item.label}
-              className={`sidebar-navItem ${
-                activeItem === item.label ? "sidebar-navItemActive" : ""
-              }`}
-              onClick={() => setActiveItem(item.label)}
-            >
-              <span className="sidebar-navIcon">
-                <img src={item.icon} alt={item.label} />
-              </span>
-              <span className="sidebar-navLabel">{item.label}</span>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </div>
-  );
-};
-
-// 2. TOPBAR COMPONENT
-const Topbar = () => {
-  return (
-    <div className="topbar">
-      <div className="topbar-searchWrap">
-        <span className="topbar-searchIcon">
-          <img src={topbarSearch} alt="Search" />
-        </span>
-        <input
-          type="text"
-          className="topbar-searchInput"
-          placeholder="Search resources, users, or logs..."
-        />
-      </div>
-
-      <div className="topbar-right">
-        <div className="topbar-iconsGroup">
-          <button className="topbar-iconBtn" aria-label="Notifications">
-            <img src={topbarBell} alt="Notifications" />
-          </button>
-          <button className="topbar-iconBtn" aria-label="Help">
-            <img src={topbarHelp} alt="Help" />
-          </button>
-          <button className="topbar-iconBtn" aria-label="Settings">
-            <img src={topbarSettings} alt="Settings" />
-          </button>
-        </div>
-
-        <div className="topbar-divider" />
-
-        <div className="topbar-userInfo">
-          <div className="topbar-userText">
-            <span className="topbar-userName">Admin User</span>
-            <span className="topbar-userRole">SUPER ADMIN</span>
-          </div>
-          <img
-            src={adminAvatar}
-            alt="Admin User avatar"
-            className="topbar-userAvatar"
-          />
-        </div>
-      </div>
-    </div>
-  );
-};
-
-// 3. STATS CARDS COMPONENT
-const StatsCards = () => {
   const cards = [
     {
       label: "TOTAL PLACEMENTS",
@@ -152,31 +79,6 @@ const StatsCards = () => {
     },
   ];
 
-  return (
-    <div className="statsCards-container">
-      {cards.map((card, index) => (
-        <div key={index} className="statsCard">
-          <div className="statsCard-header">
-            <span className="statsCard-label">{card.label}</span>
-            <div className="statsCard-iconWrapper">
-              <img src={card.icon} alt={card.label} />
-            </div>
-          </div>
-          <div className="statsCard-value">{card.value}</div>
-          <div className={`statsCard-note statsCard-note--${card.noteType}`}>
-            {card.noteIcon && (
-              <img src={card.noteIcon} alt="" className="statsCard-noteIcon" />
-            )}
-            <span>{card.note}</span>
-          </div>
-        </div>
-      ))}
-    </div>
-  );
-};
-
-// 4. PLACEMENT PERFORMANCE COMPONENT
-const PlacementPerformance = () => {
   const months = [
     { label: "Jan", height: "115.19px", value: 38 },
     { label: "Feb", height: "166.39px", value: 62 },
@@ -186,41 +88,6 @@ const PlacementPerformance = () => {
     { label: "Jun", height: "243.19px", value: 100, isHighlight: true },
   ];
 
-  return (
-    <div className="placementPerformance-card">
-      <div className="placementPerformance-header">
-        <div className="placementPerformance-leftContent">
-          <h3 className="placementPerformance-title">Placement Performance</h3>
-          <p className="placementPerformance-subtitle">
-            Monthly placement success trends
-          </p>
-        </div>
-        <div className="placementPerformance-legend">
-          <span className="placementPerformance-legendDot" />
-          <span className="placementPerformance-legendText">Placements</span>
-        </div>
-      </div>
-
-      <div className="placementPerformance-chartWrap">
-        <div className="placementPerformance-columns">
-          {months.map((item, index) => (
-            <div className="placementPerformance-columnItem" key={index}>
-              <div
-                className={`placementPerformance-bar ${item.isHighlight ? "highlight" : ""}`}
-                style={{ height: item.height }}
-                title={`${item.label}: ${item.value}`}
-              />
-              <span className="placementPerformance-label">{item.label}</span>
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
-  );
-};
-
-// 5. ADMIN ACTIVITY LOG COMPONENT
-const AdminActivityLog = () => {
   const activities = [
     {
       title: "New User Registration",
@@ -254,42 +121,6 @@ const AdminActivityLog = () => {
     },
   ];
 
-  return (
-    <div className="adminActivityLog-card">
-      <div className="adminActivityLog-header">
-        <h3 className="adminActivityLog-title">Admin Activity Log</h3>
-      </div>
-      <div className="adminActivityLog-content">
-        <ul className="adminActivityLog-list">
-          {activities.map((activity) => (
-            <li className="adminActivityLog-item" key={activity.title}>
-              <span
-                className="adminActivityLog-icon"
-                style={{ backgroundColor: activity.bg }}
-              >
-                <img src={activity.icon} alt={activity.title} />
-              </span>
-              <div className="adminActivityLog-text">
-                <span className="adminActivityLog-itemTitle">
-                  {activity.title}
-                </span>
-                <span className="adminActivityLog-meta">{activity.meta}</span>
-              </div>
-            </li>
-          ))}
-        </ul>
-      </div>
-      <div className="adminActivityLog-footer">
-        <button className="adminActivityLog-viewHistoryBtn">
-          View Full History
-        </button>
-      </div>
-    </div>
-  );
-};
-
-// 6. USER MANAGEMENT TABLE COMPONENT
-const UserManagementTable = () => {
   const rows = [
     {
       initials: "SK",
@@ -310,100 +141,256 @@ const UserManagementTable = () => {
   ];
 
   return (
-    <div className="userManagementTable-card">
-      <div className="userManagementTable-header">
-        <h3 className="userManagementTable-title">
-          User Management &amp; Recent Activity
-        </h3>
-        <div className="userManagementTable-actions">
-          <button className="userManagementTable-actionBtn">
-            <span className="userManagementTable-actionGlyph">
-              <img src={filterIcon} alt="Filter" />
-            </span>
-            Filter
-          </button>
-          <button className="userManagementTable-actionBtn">
-            <span className="userManagementTable-actionGlyph">
-              <img src={sortIcon} alt="Sort" />
-            </span>
-            Sort
-          </button>
+    <div className="admin-dashboard-container">
+      {/* 1. SIDEBAR */}
+      <div className="sidebar">
+        <div className="sidebar-nav">
+          <ul className="sidebar-navList">
+            {navItems.map((item) => (
+              <li
+                key={item.label}
+                className={`sidebar-navItem ${
+                  activeItem === item.label ? "sidebar-navItemActive" : ""
+                }`}
+                onClick={() => setActiveItem(item.label)}
+              >
+                <span className="sidebar-navIcon">
+                  <img src={item.icon} alt={item.label} />
+                </span>
+                <span className="sidebar-navLabel">{item.label}</span>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
 
-      <div className="userManagementTable-scroll">
-        <table className="userManagementTable-table">
-          <thead>
-            <tr>
-              <th>USER</th>
-              <th>ROLE</th>
-              <th>ACTIVITY</th>
-              <th>TIMESTAMP</th>
-              <th className="userManagementTable-actionsHeader">ACTIONS</th>
-            </tr>
-          </thead>
-          <tbody>
-            {rows.map((row) => (
-              <tr key={row.email}>
-                <td>
-                  <div className="userManagementTable-userCell">
-                    <span className="userManagementTable-userAvatarInitials">
-                      {row.initials}
-                    </span>
-                    <div className="userManagementTable-userCellText">
-                      <span className="userManagementTable-userCellName">
-                        {row.name}
-                      </span>
-                      <span className="userManagementTable-userCellEmail">
-                        {row.email}
+      <div className="admin-main-content">
+        {/* 2. TOPBAR */}
+        <div className="topbar">
+          <div className="topbar-searchWrap">
+            <span className="topbar-searchIcon">
+              <img src={topbarSearch} alt="Search" />
+            </span>
+            <input
+              type="text"
+              className="topbar-searchInput"
+              placeholder="Search resources, users, or logs..."
+            />
+          </div>
+
+          <div className="topbar-right">
+            <div className="topbar-iconsGroup">
+              <button className="topbar-iconBtn" aria-label="Notifications">
+                <img src={topbarBell} alt="Notifications" />
+              </button>
+              <button className="topbar-iconBtn" aria-label="Help">
+                <img src={topbarHelp} alt="Help" />
+              </button>
+              <button className="topbar-iconBtn" aria-label="Settings">
+                <img src={topbarSettings} alt="Settings" />
+              </button>
+            </div>
+
+            <div className="topbar-divider" />
+
+            <div className="topbar-userInfo">
+              <div className="topbar-userText">
+                <span className="topbar-userName">Admin User</span>
+                <span className="topbar-userRole">SUPER ADMIN</span>
+              </div>
+              <img
+                src={adminAvatar}
+                alt="Admin User avatar"
+                className="topbar-userAvatar"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div className="admin-dashboard-body">
+          {/* 3. STATS CARDS */}
+          <div className="statsCards-container">
+            {cards.map((card, index) => (
+              <div key={index} className="statsCard">
+                <div className="statsCard-header">
+                  <span className="statsCard-label">{card.label}</span>
+                  <div className="statsCard-iconWrapper">
+                    <img src={card.icon} alt={card.label} />
+                  </div>
+                </div>
+                <div className="statsCard-value">{card.value}</div>
+                <div
+                  className={`statsCard-note statsCard-note--${card.noteType}`}
+                >
+                  {card.noteIcon && (
+                    <img
+                      src={card.noteIcon}
+                      alt=""
+                      className="statsCard-noteIcon"
+                    />
+                  )}
+                  <span>{card.note}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="admin-middle-row">
+            {/* 4. PLACEMENT PERFORMANCE */}
+            <div className="placementPerformance-card">
+              <div className="placementPerformance-header">
+                <div className="placementPerformance-leftContent">
+                  <h3 className="placementPerformance-title">
+                    Placement Performance
+                  </h3>
+                  <p className="placementPerformance-subtitle">
+                    Monthly placement success trends
+                  </p>
+                </div>
+                <div className="placementPerformance-legend">
+                  <span className="placementPerformance-legendDot" />
+                  <span className="placementPerformance-legendText">
+                    Placements
+                  </span>
+                </div>
+              </div>
+
+              <div className="placementPerformance-chartWrap">
+                <div className="placementPerformance-columns">
+                  {months.map((item, index) => (
+                    <div
+                      className="placementPerformance-columnItem"
+                      key={index}
+                    >
+                      <div
+                        className={`placementPerformance-bar ${item.isHighlight ? "highlight" : ""}`}
+                        style={{ height: item.height }}
+                        title={`${item.label}: ${item.value}`}
+                      />
+                      <span className="placementPerformance-label">
+                        {item.label}
                       </span>
                     </div>
-                  </div>
-                </td>
-                <td>
-                  <span
-                    className={`userManagementTable-roleBadge userManagementTable-roleBadge--${row.role.toLowerCase()}`}
-                  >
-                    {row.role}
-                  </span>
-                </td>
-                <td className="userManagementTable-activityCell">
-                  {row.activity}
-                </td>
-                <td className="userManagementTable-timestampCell">
-                  {row.timestamp}
-                </td>
-                <td className="userManagementTable-actionsCell">
-                  <button
-                    className="userManagementTable-actionsBtn"
-                    aria-label="Row actions"
-                  >
-                    <img src={actionIcon} alt="Actions" />
-                  </button>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-    </div>
-  );
-};
+                  ))}
+                </div>
+              </div>
+            </div>
 
-// MAIN ADMIN DASHBOARD WRAPPER
-const AdminDashboard = () => {
-  return (
-    <div className="admin-dashboard-container">
-      <Sidebar />
-      <div className="admin-main-content">
-        <Topbar />
-        <div className="admin-dashboard-body">
-          <StatsCards />
-          <div className="admin-middle-row">
-            <PlacementPerformance />
-            <AdminActivityLog />
+            {/* 5. ADMIN ACTIVITY LOG */}
+            <div className="adminActivityLog-card">
+              <div className="adminActivityLog-header">
+                <h3 className="adminActivityLog-title">Admin Activity Log</h3>
+              </div>
+              <div className="adminActivityLog-content">
+                <ul className="adminActivityLog-list">
+                  {activities.map((activity) => (
+                    <li className="adminActivityLog-item" key={activity.title}>
+                      <span
+                        className="adminActivityLog-icon"
+                        style={{ backgroundColor: activity.bg }}
+                      >
+                        <img src={activity.icon} alt={activity.title} />
+                      </span>
+                      <div className="adminActivityLog-text">
+                        <span className="adminActivityLog-itemTitle">
+                          {activity.title}
+                        </span>
+                        <span className="adminActivityLog-meta">
+                          {activity.meta}
+                        </span>
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="adminActivityLog-footer">
+                <button className="adminActivityLog-viewHistoryBtn">
+                  View Full History
+                </button>
+              </div>
+            </div>
           </div>
-          <UserManagementTable />
+
+          {/* 6. USER MANAGEMENT TABLE */}
+          <div className="userManagementTable-card">
+            <div className="userManagementTable-header">
+              <h3 className="userManagementTable-title">
+                User Management &amp; Recent Activity
+              </h3>
+              <div className="userManagementTable-actions">
+                <button className="userManagementTable-actionBtn">
+                  <span className="userManagementTable-actionGlyph">
+                    <img src={filterIcon} alt="Filter" />
+                  </span>
+                  Filter
+                </button>
+                <button className="userManagementTable-actionBtn">
+                  <span className="userManagementTable-actionGlyph">
+                    <img src={sortIcon} alt="Sort" />
+                  </span>
+                  Sort
+                </button>
+              </div>
+            </div>
+
+            <div className="userManagementTable-scroll">
+              <table className="userManagementTable-table">
+                <thead>
+                  <tr>
+                    <th>USER</th>
+                    <th>ROLE</th>
+                    <th>ACTIVITY</th>
+                    <th>TIMESTAMP</th>
+                    <th className="userManagementTable-actionsHeader">
+                      ACTIONS
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {rows.map((row) => (
+                    <tr key={row.email}>
+                      <td>
+                        <div className="userManagementTable-userCell">
+                          <span className="userManagementTable-userAvatarInitials">
+                            {row.initials}
+                          </span>
+                          <div className="userManagementTable-userCellText">
+                            <span className="userManagementTable-userCellName">
+                              {row.name}
+                            </span>
+                            <span className="userManagementTable-userCellEmail">
+                              {row.email}
+                            </span>
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        <span
+                          className={`userManagementTable-roleBadge userManagementTable-roleBadge--${row.role.toLowerCase()}`}
+                        >
+                          {row.role}
+                        </span>
+                      </td>
+                      <td className="userManagementTable-activityCell">
+                        {row.activity}
+                      </td>
+                      <td className="userManagementTable-timestampCell">
+                        {row.timestamp}
+                      </td>
+                      <td className="userManagementTable-actionsCell">
+                        <button
+                          className="userManagementTable-actionsBtn"
+                          aria-label="Row actions"
+                        >
+                          <img src={actionIcon} alt="Actions" />
+                        </button>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
         </div>
       </div>
     </div>
