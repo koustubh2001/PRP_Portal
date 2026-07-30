@@ -1,3 +1,4 @@
+
 .admin-dashboard-container {
   display: flex;
   width: 1440px;
@@ -32,4 +33,795 @@
   display: flex;
   gap: 24px;
   align-items: flex-start;
+}
+
+/* --- Sidebar Styles --- */
+.sidebar {
+  position: relative;
+  width: 350px;
+  min-width: 350px;
+  height: 960px;
+  top: 0px;
+  background: linear-gradient(180deg, #FFFFFF 0%, #BA68C8 100%);
+  padding-top: 60px;
+  box-sizing: border-box;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+  border-right: 10px solid #610A9B;
+  overflow: hidden;
+}
+
+.sidebar-nav {
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.sidebar-navList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.sidebar-navItem {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 330px;
+  height: 60px;
+  padding-left: 32px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 100%;
+  color: #000000;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+  box-sizing: border-box;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  margin-left: auto;
+}
+
+.sidebar-navItem:hover {
+  background: #610A9B;
+  color: #DA02FF;
+}
+
+.sidebar-navItem:hover .sidebar-navLabel {
+  color: #DA02FF;
+}
+
+.sidebar-navItemActive {
+  background: #610A9B;
+  color: #DA02FF;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  box-shadow: 0px 1px 4px 0px #BA68C8;
+}
+
+.sidebar-navIcon {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.sidebar-navIcon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.sidebar-navLabel {
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+.sidebar-navItemActive .sidebar-navLabel {
+  color: #DA02FF;
+}
+
+/* --- Topbar Styles --- */
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 1088px;
+  height: 64px;
+  padding: 0 64px;
+  background-color: #F1FBFF;
+  border-bottom: 1px solid #CCC3D4;
+  box-sizing: border-box;
+}
+
+.topbar-searchWrap {
+  display: flex;
+  align-items: center;
+  width: 320px;
+  height: 36px;
+  background-color: #EAF5FA;
+  border-radius: 9999px;
+  padding: 9px 16px 10px 40px;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.topbar-searchIcon {
+  position: absolute;
+  left: 14px;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.topbar-searchIcon img {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
+
+.topbar-searchInput {
+  border: none;
+  outline: none;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #6B7280;
+  width: 100%;
+  background: transparent;
+  line-height: 100%;
+}
+
+.topbar-searchInput::placeholder {
+  color: #6B7280;
+}
+
+.topbar-right {
+  display: flex;
+  align-items: center;
+  width: 320.49px;
+  height: 40px;
+  gap: 24px;
+}
+
+.topbar-iconsGroup {
+  display: flex;
+  align-items: center;
+  width: 136.1px;
+  height: 36px;
+  gap: 16px;
+}
+
+.topbar-iconBtn {
+  width: 36px;
+  height: 36px;
+  border-radius: 9999px;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.topbar-iconBtn img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.topbar-divider {
+  width: 1px;
+  height: 32px;
+  background-color: #CCC3D4;
+}
+
+.topbar-userInfo {
+  display: flex;
+  align-items: center;
+  width: 135.39px;
+  height: 40px;
+  gap: 12px;
+}
+
+.topbar-userText {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  width: 83.39px;
+  height: 36px;
+}
+
+.topbar-userName {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: #131D21;
+  line-height: 20px;
+  letter-spacing: 0.14px;
+  text-align: right;
+}
+
+.topbar-userRole {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: #131D21;
+  line-height: 16px;
+  letter-spacing: 0px;
+  text-align: right;
+  text-transform: uppercase;
+}
+
+.topbar-userAvatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 9999px;
+  object-fit: cover;
+  box-shadow: 0px 0px 0px 2px #885CD2;
+}
+
+/* --- Stats Cards Styles --- */
+.statsCards-container {
+  display: flex;
+  gap: 24px;
+  width: 100%;
+}
+
+.statsCard {
+  background-color: #FFFFFF;
+  border: 1px solid #CCC3D4;
+  border-radius: 12px;
+  padding: 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+  box-shadow: 0px 1px 2px 0px #0000000D;
+}
+
+.statsCard-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.statsCard-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: #7B7483;
+  letter-spacing: 0.5px;
+}
+
+.statsCard-iconWrapper {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.statsCard-iconWrapper img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.statsCard-value {
+  font-family: 'Inter', sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: #131D21;
+  margin-bottom: 12px;
+  line-height: 1.2;
+}
+
+.statsCard-note {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.statsCard-noteIcon {
+  width: 14px;
+  height: 14px;
+  object-fit: contain;
+}
+
+.statsCard-note--up {
+  color: #10B981;
+}
+
+.statsCard-note--neutral {
+  color: #6366F1;
+}
+
+.statsCard-note--warn {
+  color: #D97706;
+}
+
+.statsCard-note--muted {
+  color: #7B7483;
+}
+
+/* --- Placement Performance Styles --- */
+.placementPerformance-card {
+  width: 632px;
+  height: 418px;
+  background-color: #FFFFFFB2;
+  border-radius: 12px;
+  border: 1px solid #CCC3D466;
+  backdrop-filter: blur(12px);
+  padding: 24px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.placementPerformance-header {
+  width: 582px;
+  height: 48px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.placementPerformance-leftContent {
+  width: 232.97px;
+  height: 48px;
+  display: flex;
+  flex-direction: column;
+}
+
+.placementPerformance-title {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 28px;
+  color: #0B1C30;
+  margin: 0;
+}
+
+.placementPerformance-subtitle {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #4A4452;
+  margin: 0;
+}
+
+.placementPerformance-legend {
+  width: 89.84px;
+  height: 17px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  box-sizing: border-box;
+}
+
+.placementPerformance-legendDot {
+  width: 12px;
+  height: 12px;
+  border-radius: 9999px;
+  background-color: #8D61D7;
+}
+
+.placementPerformance-legendText {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.6px;
+  color: #0B1C30;
+}
+
+.placementPerformance-chartWrap {
+  width: 582px;
+  height: 272px;
+  padding: 16px 24px 0 24px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.placementPerformance-columns {
+  width: 534px;
+  height: 272px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.placementPerformance-columnItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.placementPerformance-bar {
+  width: 65.44px;
+  background-color: #8D61D733;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  transition: background-color 0.2s ease;
+  cursor: pointer;
+}
+
+.placementPerformance-bar.highlight {
+  background-color: #8D61D7;
+}
+
+.placementPerformance-bar:hover {
+  background-color: #8D61D7;
+}
+
+.placementPerformance-label {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  color: #4A4452;
+  text-align: center;
+}
+
+/* --- Admin Activity Log Styles --- */
+.adminActivityLog-card {
+  width: 304px;
+  height: 418px;
+  background-color: #FFFFFFB2;
+  border-radius: 12px;
+  border: 1px solid #CCC3D466;
+  padding: 24px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.adminActivityLog-header {
+  width: 254px;
+  height: 52px;
+  padding-bottom: 24px;
+  box-sizing: border-box;
+}
+
+.adminActivityLog-title {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 28px;
+  color: #0B1C30;
+  margin: 0;
+}
+
+.adminActivityLog-content {
+  width: 254px;
+  height: 272px;
+  padding-bottom: 8px;
+  box-sizing: border-box;
+}
+
+.adminActivityLog-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.adminActivityLog-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.adminActivityLog-icon {
+  display: flex;
+  width: 32px;
+  height: 32px;
+  border-radius: 9999px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.adminActivityLog-icon img {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+}
+
+.adminActivityLog-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+}
+
+.adminActivityLog-itemTitle {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.14px;
+  color: #0B1C30;
+}
+
+.adminActivityLog-meta {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  color: #4A4452;
+}
+
+.adminActivityLog-footer {
+  width: 254px;
+  height: 44px;
+  padding-top: 24px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.adminActivityLog-viewHistoryBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 254px;
+  height: 20px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.14px;
+  color: #8D61D7;
+  text-align: center;
+  padding: 0;
+}
+
+.adminActivityLog-viewHistoryBtn:hover {
+  text-decoration: underline;
+}
+
+/* --- User Management Table Styles --- */
+.userManagementTable-card {
+  background-color: #FFFFFF01;
+  border-radius: 12px;
+  border: 1px solid #CCC3D4;
+  box-shadow: 0px 1px 2px 0px #0000000D;
+  overflow: hidden;
+  width: 962px;
+  min-height: 252px;
+}
+
+.userManagementTable-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 960px;
+  height: 61px;
+  padding: 16px 24px;
+  border-bottom: 1px solid #CCC3D4;
+  box-sizing: border-box;
+}
+
+.userManagementTable-title {
+  font-family: 'Manrope', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: #131D21;
+  line-height: 28px;
+  margin: 0;
+}
+
+.userManagementTable-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  height: 20px;
+}
+
+.userManagementTable-actionBtn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #131D21;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  line-height: 20px;
+  letter-spacing: 0.14px;
+}
+
+.userManagementTable-actionGlyph {
+  width: 15px;
+  height: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.userManagementTable-actionGlyph img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.userManagementTable-scroll {
+  overflow-x: auto;
+  width: 960px;
+}
+
+.userManagementTable-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.userManagementTable-table thead tr {
+  background-color: #EAF5FA;
+  height: 44px;
+}
+
+.userManagementTable-table th {
+  text-align: left;
+  padding: 12px 24px;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.7px;
+  color: #131D21;
+  white-space: nowrap;
+  text-transform: uppercase;
+}
+
+.userManagementTable-actionsHeader {
+  text-align: right;
+}
+
+.userManagementTable-table td {
+  padding: 0 24px;
+  border-top: 1px solid #CCC3D4;
+  vertical-align: middle;
+}
+
+.userManagementTable-table tbody tr {
+  height: 72.5px;
+}
+
+.userManagementTable-userCell {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.userManagementTable-userAvatarInitials {
+  width: 32px;
+  height: 32px;
+  border-radius: 9999px;
+  background-color: #6F42B71A;
+  color: #131D21;
+  font-family: 'Inter', sans-serif;
+  font-size: 12.5px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.userManagementTable-userCellText {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0px;
+}
+
+.userManagementTable-userCellName {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: #131D21;
+  line-height: 20px;
+}
+
+.userManagementTable-userCellEmail {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: #131D21;
+  line-height: 16px;
+}
+
+.userManagementTable-roleBadge {
+  display: inline-block;
+  padding: 2.5px 8px;
+  border-radius: 4px;
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0px;
+  white-space: nowrap;
+  text-transform: uppercase;
+  line-height: 16.5px;
+}
+
+.userManagementTable-roleBadge--recruiter {
+  background-color: #DFEAEF;
+  color: #131D21;
+}
+
+.userManagementTable-roleBadge--candidate {
+  background-color: #DFEAEF;
+  color: #131D21;
+}
+
+.userManagementTable-activityCell {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #131D21;
+  line-height: 20px;
+  max-width: 280px;
+}
+
+.userManagementTable-timestampCell {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #7B7483;
+  white-space: nowrap;
+  line-height: 20px;
+}
+
+.userManagementTable-actionsCell {
+  text-align: right;
+}
+
+.userManagementTable-actionsBtn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  width: 16px;
+  height: 16px;
+}
+
+.userManagementTable-actionsBtn img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }

@@ -53,8 +53,7 @@ const router = createBrowserRouter([
     path: '/PRP_Portal/Login/Forgotpassword',
     element: <ForgotPassword />,
   },
-  {
-    // Fallback or explicit route for dashboard root if navigated directly
+  { 
     path: '/PRP_Portal/Dashboard',
     element: <AdminDashboard />,
   }
