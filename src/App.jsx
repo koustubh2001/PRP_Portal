@@ -11,6 +11,7 @@ import ForgotPassword from "./Components-Login/ForgotPassword";
 import PlacementofficerLogin from "./Components-Login/PlacementofficerLogin";
 import AdminLogin from "./Components-Login/AdminLogin";
 import AdminDashboard from "./components-AdminDashboard/AdminDashboard";
+import PlacementOfficerDashboard from "./components-PlacementOfficerDashboard/PlacementOfficerDashboard";
 
 const router = createBrowserRouter([
   {
@@ -56,6 +57,10 @@ const router = createBrowserRouter([
   { 
     path: '/PRP_Portal/Dashboard',
     element: <AdminDashboard />,
+  },
+  {
+    path:'/PRP_Portal/PlacementOfficerDashboard',
+    element:<PlacementOfficerDashboard />,
   }
 ]);
 

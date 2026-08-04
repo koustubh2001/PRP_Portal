@@ -12,6 +12,7 @@ const ForgotPassword = () => {
     const initialValues = { Email: "" }
     const [formValues, setFormValues] = useState(initialValues)
     const [error, setError] = useState({});
+    
     const [mode, setMode] = useState("Forgot Password")
     const [seconds, setSeconds] = useState(0);
 

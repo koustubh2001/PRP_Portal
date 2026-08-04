@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import './AdminLogin.css'
+import { useNavigate } from 'react-router-dom';
 import ProductLogo from '../assets/LoginAssets/EduHireAdmin.png'
 import adminimg from '../assets/LoginAssets/AdminLoginSub.png'
 import EyeImg from "../assets/RegistrationAssets/EyeIcon.png";
@@ -10,31 +11,27 @@ import SecureAcc from '../assets/LoginAssets/SecureAccess.png'
 import Email from '../assets/LoginAssets/EmailIcon.png'
 import Pass from '../assets/LoginAssets/PassIcon.png'
 
-
-
 const AdminLogin = () => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     const initialValues = { Email: "", password: "" }
     const [formValues, setFormValues] = useState(initialValues)
     const [showPassword, setShowPassword] = useState(false);
     const [error, setError] = useState({});
+    const navigate = useNavigate();
 
     const userName = "Admin@admin.com";
     const passWord = "Admin@12345";
 
     const validateForm = () => {
         const newErrors = {};
-
         if (!formValues.Email.trim()) {
             newErrors.Email = "Email is required*";
         } else if (!emailRegex.test(formValues.Email)) {
             newErrors.Email = "Please enter a valid email address*";
         }
-
         if (!formValues.password.trim()) {
             newErrors.password = "Password is required*";
         }
-
         if (Object.keys(newErrors).length === 0) {
         if (formValues.Email !== userName || formValues.password !== passWord) {
             newErrors.LoginError = "Invalid Credentials please try again";
@@ -45,20 +42,21 @@ const AdminLogin = () => {
         return Object.keys(newErrors).length === 0;
     };
 
-    const handleSubmit = (e) => {
+   const handleSubmit = (e) => {
         e.preventDefault();
         setError({});
 
         if (!validateForm()) return;
-        console.log(error)
+ 
         alert("Login Successful");
-        setFormValues(initialValues)
-    }
+        setFormValues(initialValues);
+        navigate("/PRP_Portal/Admindashboard");  
+    };
 
-    const handleForm = (e) => {
+   const handleForm = (e) => {
         const { name, value } = e.target;
         setFormValues({ ...formValues, [name]: value });
-        setError({ ...error, [name]: "", loginError: "" });
+        setError({ ...error, [name]: "", LoginError: "" });
     };
     return (
         <>
@@ -102,8 +100,7 @@ const AdminLogin = () => {
                                 <label htmlFor="Email">Email</label>
                                 <div style={{ display: "flex", flexDirection: "column" }}>
                                     <input className={error.Email || error.LoginError ? "UserLogin-Form-Input-Errors" : "AdminLogin-Form-Input"} type="email" name="Email" id="Email" autoComplete='off'
-                                     placeholder="Enter your email" value={formValues.Email} onChange={handleForm} />
-                                       
+                                    placeholder="Enter your email" value={formValues.Email} onChange={handleForm} />
                                     {error.Email && <span className="TC-Reg-err-msg" style={{ color: 'red', fontSize: '12px' }}>{error.Email}</span>}
                                 </div>
                             </div>
@@ -159,10 +156,8 @@ const AdminLogin = () => {
                                 </div>
                             </div>
                         </div>
-
                     </form>
                 </div>
-
             </div>
         </>
     )

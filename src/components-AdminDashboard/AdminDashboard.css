@@ -1,11 +1,11 @@
 
 .admin-dashboard-container {
   display: flex;
-  width: 1440px;
+  width: full;
   min-height: 1024px;
   background-color: #f8fafc;
   margin: 0 auto;
-  position: relative;
+  /* position: relative; */
 }
 
 .admin-main-content {
